@@ -1,0 +1,17 @@
+Practica: Envio de Parametros GET url
+
+Crear un proyecto web llamado webapp-tarea1. Los requeirmientos son incorporar un servlet llamado indexServelter mapeado a la ruta index.html con el metodo doGet. Luego pasar parametros mediante url con el nombre y apedllido e imprimirlos en el navegador. Son obligatorios, si no existen mostrar un mensjae de que no existen los datos enviados.
+
+Tambien  mostrar la fecha y hira actual formateada como (dd 'de' MMMM, yyyy).
+
+
+Tarea 1: Servlet y envio de parametros
+
+Hola mi nombre es: Hugo Canizales
+
+la fecha es : 31 de agosto, 2023
+
+
+Tiempo 20 minutos.
+
+Git y GitHub

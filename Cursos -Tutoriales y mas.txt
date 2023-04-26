@@ -1,0 +1,33 @@
+Instalacion de Mysql
+https://www.youtube.com/watch?v=_K2nOYwOq1E
+
+Primeros Pasos con Git y GitHub
+Curso 1:
+https://www.youtube.com/watch?v=3GymExBkKjE
+
+Curso 2:
+https://www.youtube.com/watch?v=mBYSUUnMt9M
+
+
+ADICIONALES
+
+Ejemplo crear proyecto con Intellij
+https://www.youtube.com/watch?v=AJxBg90HM4s
+
+Primeros pasos con Jakarta
+https://www.youtube.com/watch?v=j05tbnFnoIk
+
+DataSource en Jakarta
+https://www.youtube.com/watch?v=u-skqqdLfIQ
+
+Ejemplo crear un proyecto jpa con ejb en intellij
+https://www.youtube.com/watch?v=jB2uSJX7jnM
+
+Spring Data con JPA
+https://www.youtube.com/watch?v=wuX2ESOy-Ts
+
+CRUD USANDO JAKARTA EN ECLIPSE
+https://www.youtube.com/watch?v=iKm6hM3SLuk
+
+Login usando JSP. SERVLET Y JDBC
+https://www.youtube.com/watch?v=zdWfyBXO2iU

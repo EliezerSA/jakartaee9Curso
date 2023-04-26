@@ -1,0 +1,71 @@
+Ejemplo simple uso de CDI
+
+Imaginemos que tenemos una aplicación web de venta de productos con tres clases: Producto, CarritoCompras y DetallePedido. La clase DetallePedido necesita acceder a una instancia de CarritoCompras para poder agregar productos al carrito. Utilizaremos CDI para realizar la inyección de dependencias y gestionar los contextos.
+
+Paso 1: Crear las clases
+
+En IntelliJ, crea tres clases en tu proyecto: Producto, CarritoCompras y DetallePedido. Por ejemplo:
+
+Clase Producto
+
+public class Producto {
+    // Atributos y métodos de la clase Producto
+}
+
+
+Clase CarritoCompras:
+
+@RequestScoped // Anotación para indicar que el contexto es de solicitud
+public class CarritoCompras {
+    // Atributos y métodos de la clase CarritoCompras
+}
+
+
+Clase DetallePedido:
+
+@SessionScoped // Anotación para indicar que el contexto es de sesión
+public class DetallePedido {
+    @Inject // Anotación para realizar la inyección de dependencia
+    private CarritoCompras carritoCompras; // Dependencia a inyectar
+
+    // Atributos y métodos de la clase DetallePedido que utilizan la instancia de CarritoCompras
+}
+
+
+Paso 2: Configurar CDI en el proyecto
+
+En el archivo beans.xml, que se encuentra en la carpeta META-INF del proyecto, configuramos CDI para que pueda detectar y gestionar las dependencias y contextos de nuestras clases. Aquí un ejemplo básico de configuración:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/beans_2_0.xsd"
+       bean-discovery-mode="annotated">
+</beans>
+
+
+
+Paso 3: Utilizar las clases en la aplicación
+
+En tu aplicación, puedes utilizar las clases Producto, CarritoCompras y DetallePedido como lo haces normalmente. La inyección de dependencias se realizará automáticamente gracias a las anotaciones @Inject y las configuraciones de CDI.
+
+Por ejemplo, en un servlet o un managed bean, puedes crear una instancia de DetallePedido y utilizarla para agregar productos al carrito de compras:
+
+
+
+@WebServlet("/agregarProducto")
+public class AgregarProductoServlet extends HttpServlet {
+    @Inject
+    private DetallePedido detallePedido; // Inyección de dependencia
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String idProducto = request.getParameter("idProducto");
+        // Lógica para obtener el producto a partir del id
+
+        Producto producto = new Producto(); // Creación de una instancia de Producto
+        // Lógica para configurar el producto
+
+        detallePedido.agregarProducto(producto); // Uso de la instancia de DetallePedido inyectada
+        // Lógica para redirigir o mostrar una respuesta al usuario
+    }
+}
